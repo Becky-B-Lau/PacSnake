@@ -6196,7 +6196,7 @@ TilemapCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 803fa2bde0d4f7a4fb068478e1cb6147, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -8844,12 +8844,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d7f2cb27e699b47a997a794f901408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 8
   speedMultiplier: 1
-  initialDirection: {x: 0, y: 0}
+  initialDirection: {x: 1, y: 0}
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!114 &1097184290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8862,8 +8862,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa17bdcf355ae340b9327dc7cab7386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
-  animationTime: 0.25
+  sprites:
+  - {fileID: 21300000, guid: 1f9604f5749fde646a59a72c9ee1cd3a, type: 3}
+  - {fileID: 21300000, guid: f8f2ab5881c3e9949bf4ffe9525a0fb7, type: 3}
+  - {fileID: 21300000, guid: 1f9604f5749fde646a59a72c9ee1cd3a, type: 3}
+  - {fileID: 21300000, guid: e3b83262a412c74408dba5cbe89f43f5, type: 3}
+  animationTime: 0.125
   loop: 1
 --- !u!1 &1639978001
 GameObject:

@@ -4,11 +4,12 @@ using UnityEngine;
 public class Pacman : MonoBehaviour
 {
     public Movement movement { get; private set; }
-    private void Awake()
+
+    public void Awake()
     {
-        movement = GetComponent<Movement>();
+        this.movement = GetComponent<Movement>();
     }
-    //Use WASD or arrows to move
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
@@ -19,18 +20,23 @@ public class Pacman : MonoBehaviour
         {
             this.movement.SetDirection(Vector2.down);
         }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            this.movement.SetDirection(Vector2.right);
-        }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             this.movement.SetDirection(Vector2.left);
         }
-        //Rotates Pacman when he walks
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            this.movement.SetDirection(Vector2.right);
+        }
+
         float angle = Mathf.Atan2(this.movement.direction.y, this.movement.direction.x);
         this.transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
 
     }
-}
 
+    public void ResetState()
+    {
+        this.gameObject.SetActive(true);
+        this.movement.ResetState();
+    }
+}

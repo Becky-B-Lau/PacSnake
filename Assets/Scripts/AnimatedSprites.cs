@@ -1,13 +1,14 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class AnimatedSprite : MonoBehaviour
+public class AnimatedSprites : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer { get; private set; }
     public Sprite[] sprites;
     public float animationTime = 0.25f;
-    public int animationFrame { get; private set; }
+    public int aimationFrame { get; private set; }
     public bool loop = true;
+
     private void Awake()
     {
         this.spriteRenderer = GetComponent<SpriteRenderer>();
@@ -24,23 +25,23 @@ public class AnimatedSprite : MonoBehaviour
         {
             return;
         }
-        this.animationFrame++;
-        if (this.animationFrame >= this.sprites.Length && this.loop)
+
+        this.aimationFrame++;
+        if (this.aimationFrame >= this.sprites.Length && this.loop)
         {
-            this.animationFrame = 0;
-        }
-        if (this.animationFrame >= 0 && this.animationFrame < this.sprites.Length)
-        {
-            this.spriteRenderer.sprite = this.sprites[this.animationFrame];
+            this.aimationFrame = 0;
         }
 
+        if (this.aimationFrame >= 0 && this.aimationFrame < this.sprites.Length)
+        {
+            this.spriteRenderer.sprite = this.sprites[this.aimationFrame];
+        }
     }
+
     public void Restart()
     {
-        this.animationFrame = -1;
+        this.aimationFrame = -1;
+
         Advance();
     }
-
-
 }
-

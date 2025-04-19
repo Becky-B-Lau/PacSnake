@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (this.lives <=0 && Input.anyKeyDown)
+        if (this.lives <= 0 && Input.anyKeyDown)
         {
             NewGame();
         }
@@ -97,10 +97,17 @@ public class GameManager : MonoBehaviour
     {
         pellet.gameObject.SetActive(false);
         SetScore(this.score + pellet.points);
+
+        // Check if the score is a multiple of 20 and grow the Pacman's tail  
+        if (this.score % 20 == 0)
+        {
+            this.pacman.GrowSnake();
+        }
+
         if (!HasRemainingPellets())
         {
             this.pacman.gameObject.SetActive(false);
-            Invoke(nameof(NewRound), 3.0f); // Wait for 3 seconds before starting a new round
+            Invoke(nameof(NewRound), 3.0f); // Wait for 3 seconds before starting a new round  
         }
     }
 

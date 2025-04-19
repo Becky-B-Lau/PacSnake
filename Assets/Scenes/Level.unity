@@ -10195,7 +10195,7 @@ GameObject:
   - component: {fileID: 8673218324756871838}
   m_Layer: 6
   m_Name: Pacman
-  m_TagString: Untagged
+  m_TagString: Pacman
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10382,6 +10382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e3f426fa2413f84d8a7434d72ec867f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodySegmentPrefab: {fileID: 235383794355661131, guid: 2331baa5a2eb61a40a85836881db06f0, type: 3}
+  initialTailLength: 0
+  moveInterval: 0.1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

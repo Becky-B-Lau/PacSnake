@@ -110,16 +110,10 @@ public class Pacman : MonoBehaviour
 
     void CheckCollisionWithTail()
     {
-        for (int i = 1; i < tailSegments.Count; i++) // Start from index 1 to skip the first segment  
+        for (int i = 5; i < tailSegments.Count; i++) // Start from index 5 to skip the first 5 segments  
         {
             if (Vector2.Distance(transform.position, tailSegments[i].position) < 0.5f) // Adjusted collision threshold  
             {
-                // Ensure Pacman doesn't collide with the tail segment immediately after turning  
-                if (i == 1 && Vector2.Distance(transform.position, tailSegments[i].position) < 0.1f)
-                {
-                    continue;
-                }
-
                 Die();
                 break;
             }
